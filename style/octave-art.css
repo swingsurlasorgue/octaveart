@@ -6,11 +6,7 @@ body {
     color: #333;
 }
 
-.hide {
-    display: none;
-}
-
-/* Navigation Bar */
+/* Navigation Bar & Auth Widget */
 nav {
     background-color: #2c3e50;
     padding: 10px 20px;
@@ -25,174 +21,93 @@ nav {
     font-weight: bold;
 }
 
-.auth-widget {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.auth-btn {
+.intro-section {
+    line-height: 1.6;
+}
+
+
+
+
+#oa-auth-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0;
+}
+
+#oa-auth-login-form-container {
+    display: flex;
+    gap: 8px;
+}
+
+#oa-auth-teacher-login-btn {
     padding: 6px 12px;
-    background-color: #c0392b;
+    background-color: #4285F4;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
-.auth-btn:hover {
+.oa-auth-widget {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.oa-auth-widget input {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.oa-auth-btn {
+    padding: 6px 12px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.oa-auth-btn:hover {
+    background-color: #219653;
+}
+
+.oa-auth-logout-btn {
+    background-color: #c0392b;
+}
+
+.oa-auth-logout-btn:hover {
     background-color: #a93226;
 }
 
-.user-badge {
+.oa-auth-user-badge {
     font-size: 14px;
     background: #34495e;
     padding: 4px 8px;
     border-radius: 4px;
 }
 
-.role-tag {
+.oa-auth-role-tag {
     font-weight: bold;
     color: #f1c40f;
-}
-
-/* Navigation Onglets */
-.tabs-container {
-    max-width: 1000px;
-    margin: 20px auto 0 auto;
-    padding: 0 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.tab-btn {
-    padding: 10px 20px;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
-    background: #e0e0e0;
-    border-radius: 4px 4px 0 0;
-    color: #555;
-    transition: all 0.2s;
-}
-
-.tab-btn.active {
-    background: #2c3e50;
-    color: white;
-}
-
-.tab-btn:hover {
-    background: #d5d5d5;
-}
-
-.tab-btn.active:hover {
-    background: #2c3e50;
-}
-
-/* Layout Structure */
-.container {
-    width: 95%;
-    max-width: 1000px;
-    margin: 0 auto 30px auto;
-    padding: 20px;
-    background: transparent;
-}
-
-h2 {
-    color: #2c3e50;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-/* Component Cards */
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    height: fit-content;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 14px;
-}
-
-.action-btn {
-    width: 100%;
-    padding: 12px;
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.action-btn:hover {
-    background-color: #219653;
-}
-
-/* Student & Resource Lists Styling */
-.student-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.pending {
-    color: #888; 
-    font-style: italic;
-}
-
-.resource-item {
-    background: #f8f9fa;
-    padding: 12px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    border-left: 4px solid #2980b9;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.view-chords-container {
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    gap: 30px; 
-    max-width: 1200px; 
-    margin: 0 auto;
-}
-
-.new-chord-container {
-    background: white; 
-    padding: 25px; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02); 
-    height: fit-content;
 }
