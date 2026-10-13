@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Octave Art - Mon Espace Élève</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: #f4f7f6; color: #333; }
+        
+        /* Navigation Bar */
+        nav { background-color: #2c3e50; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; color: white; }
+        .nav-brand { font-size: 20px; font-weight: bold; }
+        .auth-widget { display: flex; gap: 15px; align-items: center; }
+        .auth-btn { padding: 6px 12px; background-color: #c0392b; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        .auth-btn:hover { background-color: #a93226; }
+        .user-badge { font-size: 14px; background: #34495e; padding: 4px 8px; border-radius: 4px; }
+        
+        /* Layout Layout */
+        .container { max-width: 900px; margin: 30px auto; padding: 0 20px; display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); height: fit-content; }
+        h2, h3 { color: #2c3e50; margin-top: 0; }
+        
+        /* Forms styling */
+        .form-group { margin-bottom: 12px; }
+        .form-group label { display: block; margin-bottom: 4px; font-weight: bold; font-size: 14px; }
+        .form-group input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        
+        .submit-btn { width: 100%; padding: 10px; background-color: #27ae60; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+        .submit-btn:hover { background-color: #219653; }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar for Students -->
+    <nav>
+        <div class="nav-brand">Octave Art — Mon Espace Musique</div>
+        <div class="auth-widget">
+            <div class="user-badge">Bonjour, <span id="student-name">Chargement...</span></div>
+            <button class="auth-btn" id="logout-btn">Déconnexion</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Left Column: Assigned Pedagogical Materials -->
+        <div class="card">
+            <h2>Mes Ressources Pédagogiques</h2>
+            <div id="resources-container">
+                <p style="color: #888; font-style: italic;">Vos partitions, audios et vidéos partagés par votre professeur apparaîtront ici.</p>
+            </div>
+        </div>
+
+        <!-- Right Column: Account Security Manager -->
+        <div class="card">
+            <h3>Sécurité du compte</h3>
+            <p style="font-size: 13px; color: #666; margin-bottom: 15px;">
+                Si c'est votre première connexion, modifiez le mot de passe temporaire fourni par votre professeur.
+            </p>
+            <form id="password-form">
+                <div class="form-group">
+                    <label for="new-password">Nouveau mot de passe</label>
+                    <input type="password" id="new-password" required minlength="6" placeholder="6 caractères min.">
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirmer le mot de passe</label>
+                    <input type="password" id="confirm-password" required minlength="6" placeholder="••••••••">
+                </div>
+                <button type="submit" class="submit-btn">Mettre à jour mon mot de passe</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Chargement obligatoire du SDK Supabase local (On remonte d'un dossier) -->
+    <script src="../javascript/supabase.js"></script>
+    <!-- Logique dédiée à l'élève -->
+    <script src="../javascript/student.js"></script>
+</body>
+</html>

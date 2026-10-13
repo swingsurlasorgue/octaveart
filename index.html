@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Octave Art - Espace Pédagogique</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background-color: #f4f7f6; color: #333; }
+        
+        /* Navigation Bar & Auth Widget */
+        nav { background-color: #2c3e50; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; color: white; }
+        .nav-brand { font-size: 20px; font-weight: bold; }
+        .auth-widget { display: flex; gap: 10px; align-items: center; }
+        .auth-widget input { padding: 6px 10px; border: none; border-radius: 4px; font-size: 14px; }
+        .auth-btn { padding: 6px 12px; background-color: #27ae60; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 14px; }
+        .auth-btn:hover { background-color: #219653; }
+        .logout-btn { background-color: #c0392b; }
+        .logout-btn:hover { background-color: #a93226; }
+        .user-badge { font-size: 14px; background: #34495e; padding: 4px 8px; border-radius: 4px; }
+        .role-tag { font-weight: bold; color: #f1c40f; }
+
+        .container { max-width: 800px; margin: 50px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .intro-section { line-height: 1.6; }
+        .error-banner { display: none; background-color: #f2dede; color: #a94442; padding: 10px; border-radius: 4px; margin-bottom: 20px; text-align: center; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar with Dynamic Auth Widget -->
+    <nav>
+        <div class="nav-brand">Octave Art</div>
+        <div id="auth-container" class="auth-widget">
+            <span>Vérification de la session...</span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Error Banner for login failures -->
+        <div id="error-banner" class="error-banner"></div>
+
+        <!-- Presentation Section -->
+        <section class="intro-section">
+            <h2>Bienvenue sur votre espace d'apprentissage</h2>
+            <p>
+                <strong>Octave Art</strong> est une plateforme dédiée à mes élèves. Vous y trouverez, 
+                au fur et à mesure de votre progression, l'ensemble des ressources nécessaires à vos cours : 
+                partitions PDF, playlists de travail, exercices interactifs Soundslice et enregistrements audio.
+            </p>
+            <p>Connectez-vous en haut à droite avec les identifiants fournis par votre professeur pour accéder à votre espace personnalisé.</p>
+        </section>
+    </div>
+
+    <!-- 1. Chargement obligatoire du SDK Supabase local (Aucune dépendance internet externe) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.3/dist/umd/supabase.min.js"></script>
+
+    <!-- 2. Chargement de votre logique d'authentification nettoyée -->
+    <script src="javascript/auth.js"></script>
+</body>
+</html>
